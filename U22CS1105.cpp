@@ -156,4 +156,52 @@ void studentDetails() {
     getline(cin, s2.name);
     cout << "Enter age: ";
     cin >> s2.age;
-    cout << "Enter tot…
+    cout << "Enter total marks: ";
+    cin >> s2.totalMarks;
+
+    cout << "\nStudent Information:" << endl;
+    cout << "Name: " << s1.name << ", Age: " << s1.age << ", Total Marks: " << s1.totalMarks << endl;
+    cout << "Name: " << s2.name << ", Age: " << s2.age << ", Total Marks: " << s2.totalMarks << endl;
+
+    float average = (s1.totalMarks + s2.totalMarks) / 2;
+    cout << "Average Marks: " << average << endl;
+}
+
+// Function to execute tasks based on user choice
+void performTask(int choice) {
+    switch (choice) {
+        case 1: checkPrime(); break;
+        case 2: arraySum(); break;
+        case 3: bubbleSort(); break;
+        case 4: stringLength(); break;
+        case 5: linearSearch(); break;
+        case 6: addNumbers(); break;
+        case 7: checkPalindrome(); break;
+        case 8: studentDetails(); break;
+        default: cout << "Invalid choice!" << endl; break;
+    }
+}
+
+// Main menu to select functionality
+int main() {
+    int choice;
+    do {
+        cout << "\nMenu:" << endl;
+        cout << "1. Check Prime Number" << endl;
+        cout << "2. Sum of Array Elements" << endl;
+        cout << "3. Bubble Sort" << endl;
+        cout << "4. Compute String Length" << endl;
+        cout << "5. Linear Search" << endl;
+        cout << "6. Add Numbers Using Pointers" << endl;
+        cout << "7. Check Palindrome" << endl;
+        cout << "8. Student Details and Average Marks" << endl;
+        cout << "0. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        if (choice != 0) performTask(choice);
+    } while (choice != 0);
+
+    cout << "Program exited." << endl;
+    return 0;
+}
